@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    {{import "module/head"}}
+    <body class="skin-blue">
+        <!-- header logo: style can be found in header.less -->
+        {{import "module/header"}}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+          
+          {{import "module/menu/menu"}}
+            <!-- Right side column. Contains the navbar and content of the page -->
+          {{import "module/blank"}}
+        </div><!-- ./wrapper -->
+
+        <!-- add new calendar event modal -->
+        {{import "module/footer_js"}}
+    </body>
+</html>

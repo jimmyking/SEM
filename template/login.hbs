@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    {{import "module/head"}}
+    <body class="bg-black">
+      
+        <div class="form-box" id="login-box">
+            <div class="header">Welcome</div>
+            <form action="index.html" method="get">
+                <div class="body bg-gray">
+                    <div class="form-group">
+                        <input type="text" name="userid" class="form-control" placeholder="用户名"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="密码"/>
+                    </div>          
+                </div>
+                <div class="footer">                                                               
+                    <button type="submit" class="btn bg-olive btn-block">登录</button>
+                </div>
+            </form>
+        </div>
+        <!-- add new calendar event modal -->
+        {{import "module/footer_js"}}
+    </body>
+</html>

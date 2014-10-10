@@ -1,0 +1,12 @@
+<li class="{{#if active }} active {{/if}} {{#if istree }} treeview {{/if}}"  >
+    <a href="{{url}}">
+        <i class="fa {{icon}}"></i> <span>{{title}}</span>
+        {{#if tips }} <small class="badge pull-right {{tips.icon}}">{{tips.title}}</small> {{/if}}
+        {{#if istree }} <i class="fa fa-angle-left pull-right"></i> {{/if}}
+    </a>
+    {{#if istree }}
+    <ul class="treeview-menu">
+        {{loop "module/menu/subitem" sub}}
+    </ul>
+    {{/if}}
+</li>
