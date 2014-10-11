@@ -17,7 +17,7 @@ module.exports = {
                 "title": "部门管理"
             },
             {
-                "url": "#",
+                "url": "setting/user/index.html",
                 "title": "用户管理"
             },
             {

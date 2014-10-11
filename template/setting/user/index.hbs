@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    {{import "module/head"}}
+    <body class="skin-blue">
+        <!-- header logo: style can be found in header.less -->
+        {{import "module/header"}}
+        <div class="wrapper row-offcanvas row-offcanvas-left">
+            <!-- Left side column. contains the logo and sidebar -->
+          
+          {{import "module/menu/menu"}}
+            <!-- Right side column. Contains the navbar and content of the page -->
+          {{import "setting/user/content"}}
+        </div><!-- ./wrapper -->
+
+
+
+        <!-- COMPOSE MESSAGE MODAL -->
+        <div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">新增用户 </h4>
+                    </div>
+                    <form action="#" method="get">
+                        <div class="modal-body">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon">用户名:</span>
+                                  <input name="name" class="form-control">
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon">部&nbsp;&nbsp;&nbsp;&nbsp;门:</span>
+                                  <select class="form-control">
+                                      <option>option 1</option>
+                                      <option>option 2</option>
+                                      <option>option 3</option>
+                                      <option>option 4</option>
+                                      <option>option 5</option>
+                                  </select>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon">密&nbsp;&nbsp;&nbsp;&nbsp;码:</span>
+                                  <input type="password" name="password" class="form-control">
+                              </div>
+                          </div>
+                          
+                        </div>
+                        <div class="modal-footer clearfix">
+                          <button type="submit" class="btn btn-primary">提交</button>
+                        </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+
+        <!-- add new calendar event modal -->
+        {{import "module/footer_js"}}
+        
+    </body>
+    
+   <script type="text/javascript">
+     $(function() {
+       $(".sidebar-menu > li").removeClass('active');
+       $(".sidebar-menu > li").each(
+         function(index,element){
+           if(index==0){
+             //alert(item);
+             $(element).addClass('active');
+           }
+         }
+       );
+       $(".sidebar .treeview").tree();
+       
+       
+       //用户table操作
+       $(".check-all").on("ifChanged",function(event){
+         if(this.checked){
+           $(".check-item").iCheck('check');
+         }else{
+           $(".check-item").iCheck('uncheck');
+         }
+       });
+       
+       $(".table").on("click","button.delete-user",function(){
+         $(this).parents("tr").first().remove();
+       });
+       
+       
+       $(".mutiple-delete-user").on("click",function(){
+         var item_size = $(".check-item").size();
+         var checked_item_size = 0;
+         var checked_items = new Array();
+         $(".check-item").each(function(index,element){
+           if(element.checked){
+             checked_item_size++;
+             checked_items.push(element);
+           }
+         });
+         if(checked_item_size == 0){
+           alert("至少选择一个需要删除的项目");
+         }else{
+           $(checked_items).each(function(index,item){
+             $(item).parents("tr").first().remove();
+           });
+           $(".check-all").iCheck('uncheck');
+         }
+       });
+      
+     });
+   </script>
+</html>
