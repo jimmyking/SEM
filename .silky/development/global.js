@@ -13,7 +13,7 @@ module.exports = {
         "tips": {},
         "sub": [
             {
-                "url": "#",
+                "url": "setting/department/index.html",
                 "title": "部门管理"
             },
             {

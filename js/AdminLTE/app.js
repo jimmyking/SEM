@@ -589,6 +589,9 @@ $(window).load(function() {
             if (isActive) {
                 menu.show();
                 btn.children(".fa-angle-left").first().removeClass("fa-angle-left").addClass("fa-angle-down");
+            }else{
+                menu.hide();
+                btn.children(".fa-angle-down").first().removeClass("fa-angle-down").addClass("fa-angle-left");
             }
             //Slide open or close the menu on link click
             btn.click(function(e) {

@@ -3534,3 +3534,10 @@ fieldset[disabled] .btn-vk.active {
   color: #587ea3;
   background-color: #ffffff;
 }
+
+
+/* SEM custom */
+
+.table>tbody>tr>td {
+  vertical-align:middle;
+}
